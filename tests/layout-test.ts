@@ -27,6 +27,12 @@ describe('layout', () => {
     const segment = segmentBetween({ id: 'a', x: 80, y: 40 }, { id: 'b', x: 80, y: 180 }, 28);
     expect(segment.labelX).toBeGreaterThan(80);
   });
+
+  test('starts a downward arrow below the name under the node', () => {
+    const from = { id: 'a', x: 80, y: 40 };
+    const segment = segmentBetween(from, { id: 'b', x: 80, y: 220 }, 28, 22);
+    expect(segment.y1).toBeGreaterThan(from.y + 28);
+  });
 });
 
 describe('selectors', () => {

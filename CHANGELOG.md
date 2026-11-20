@@ -1,5 +1,10 @@
 # Changelog
 
+## Unreleased
+
+- Dark is the theme on a first run. A theme already saved on the device stays as it is.
+- Each bot's name sits under its node on the team map.
+
 ## 1.0.0
 
 - First public version of Bot Fleet.

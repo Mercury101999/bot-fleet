@@ -12,18 +12,12 @@ body,
 
 body {
   margin: 0;
-  background: #e8eef2;
+  background: #0e1519;
 }
 
 :focus-visible {
   outline: 3px solid var(--focus);
   outline-offset: 2px;
-}
-
-@media (prefers-color-scheme: dark) {
-  body {
-    background: #0e1519;
-  }
 }
 
 @media (prefers-reduced-motion: reduce) {

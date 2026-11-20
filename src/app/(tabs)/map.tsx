@@ -19,7 +19,10 @@ export default function MapScreen() {
 
   return (
     <Screen>
-      <DisplayTitle title="Team map" subtitle="Who hands work to whom. Tap a bot to open it. The list below is the same connections, in text." />
+      <DisplayTitle
+        title="Team map"
+        subtitle="Who hands work to whom. Each name sits under its node. Tap a node to open the bot. The list below is the same connections, in text."
+      />
       {state.bots.length === 0 ? (
         <EmptyState title="Nothing to map" body="Add a couple of bots first. Then record a directed hand-off, like milestone updates or FYI.">
           <Button label="Add a bot" onPress={() => router.push('/edit')} />

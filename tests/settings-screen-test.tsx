@@ -21,11 +21,16 @@ describe('SettingsScreen', () => {
     expect(screen.getByText(/6 bots and 5 connections/)).toBeTruthy();
   });
 
-  test('switches the theme and loads the example fleet', async () => {
+  test('starts in dark and keeps a theme you pick', async () => {
     await renderWithStore(<SettingsScreen />);
-    await fireEvent.press(screen.getByLabelText('Dark'));
     expect(screen.getByLabelText('Dark').props.accessibilityState.selected).toBe(true);
+
+    await fireEvent.press(screen.getByLabelText('Light'));
+    expect(screen.getByLabelText('Light').props.accessibilityState.selected).toBe(true);
+    expect(screen.getByLabelText('Dark').props.accessibilityState.selected).toBe(false);
+
     await fireEvent.press(screen.getByLabelText('Load example fleet'));
+    expect(screen.getByLabelText('Light').props.accessibilityState.selected).toBe(true);
     expect(screen.getByText(/6 bots and 5 connections/)).toBeTruthy();
   });
 });
