@@ -1,0 +1,38 @@
+:root {
+  --font-display: Fraunces, "Iowan Old Style", Palatino, Georgia, serif;
+  --font-body: Figtree, "Avenir Next", "Segoe UI", sans-serif;
+  --focus: #0c6e6a;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  background: #e8eef2;
+}
+
+:focus-visible {
+  outline: 3px solid var(--focus);
+  outline-offset: 2px;
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+    background: #0e1519;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
