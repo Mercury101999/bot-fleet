@@ -51,13 +51,14 @@ describe('reducer', () => {
   });
 
   test('loads the example fleet without changing the theme, and clear keeps the theme', () => {
-    const themed = reducer(initialState, { type: 'setTheme', theme: 'dark' });
+    expect(initialState.settings.theme).toBe('dark');
+    const themed = reducer(initialState, { type: 'setTheme', theme: 'light' });
     const loaded = reducer(themed, { type: 'loadExample' });
-    expect(loaded.settings.theme).toBe('dark');
+    expect(loaded.settings.theme).toBe('light');
     expect(loaded.bots.map((bot) => bot.name)).toEqual(exampleFleet().bots.map((bot) => bot.name));
     const cleared = reducer(loaded, { type: 'clearFleet' });
     expect(cleared.bots).toEqual([]);
     expect(cleared.links).toEqual([]);
-    expect(cleared.settings.theme).toBe('dark');
+    expect(cleared.settings.theme).toBe('light');
   });
 });

@@ -66,6 +66,17 @@ describe('storage', () => {
     await expect(loadFleet(store)).resolves.toEqual({ ok: false, reason: 'unsupported' });
   });
 
+  test('keeps a saved theme instead of applying the first-run default', async () => {
+    const store = memoryStore();
+    await saveFleet(store, { ...fleet, settings: { theme: 'system' } });
+    const loaded = await loadFleet(store);
+    expect(loaded.ok && loaded.fleet?.settings.theme).toBe('system');
+
+    await saveFleet(store, { ...fleet, settings: { theme: 'light' } });
+    const light = await loadFleet(store);
+    expect(light.ok && light.fleet?.settings.theme).toBe('light');
+  });
+
   test('saves and loads the same fleet', async () => {
     const store = memoryStore();
     await saveFleet(store, fleet);

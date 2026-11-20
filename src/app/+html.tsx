@@ -26,7 +26,7 @@ export default function Root({ children }: PropsWithChildren) {
         <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
         <title>Bot Fleet</title>
         <meta name="description" content={description} />
-        <meta name="theme-color" content="#E8EEF2" />
+        <meta name="theme-color" content="#0E1519" />
         <meta name="mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="default" />
@@ -38,10 +38,7 @@ export default function Root({ children }: PropsWithChildren) {
           dangerouslySetInnerHTML={{
             __html: `
               html, body, #root { height: 100%; }
-              body { margin: 0; background: #E8EEF2; }
-              @media (prefers-color-scheme: dark) {
-                body { background: #0E1519; }
-              }
+              body { margin: 0; background: #0E1519; }
               :root { --focus: #0C6E6A; }
               :focus-visible {
                 outline: 3px solid var(--focus);

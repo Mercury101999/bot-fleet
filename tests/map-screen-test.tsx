@@ -14,6 +14,8 @@ describe('MapScreen', () => {
     const example = exampleFleet();
     await renderWithStore(<MapScreen />, { bots: example.bots, links: example.links });
     expect(screen.getByText('Job Scout → Code Partner')).toBeTruthy();
+    expect(screen.getByText('Release Notes')).toBeTruthy();
+    expect(screen.getByText('Inbox Triage')).toBeTruthy();
     expect(screen.getAllByText('resume projects').length).toBeGreaterThan(0);
     await fireEvent.press(screen.getAllByLabelText('Open Job Scout')[0]);
     expect(fleetRouter().push).toHaveBeenCalledWith({ pathname: '/bot', params: { id: 'job-scout' } });

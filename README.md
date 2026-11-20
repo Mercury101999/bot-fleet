@@ -25,7 +25,7 @@ Open [https://mercury101999.github.io/bot-fleet/](https://mercury101999.github.i
 
 ## What it looks like
 
-The home screen counts the fleet and lists open to-dos plus recent activity.
+The home screen opens in dark. It counts the fleet and lists open to-dos plus recent activity.
 
 ![Home overview with status counts, open to-dos, and recent activity](docs/screenshots/home.png)
 
@@ -33,11 +33,11 @@ A bot keeps its role, status, notes, to-dos, and a short activity log.
 
 ![Job Scout detail with notes, to-dos, and activity](docs/screenshots/bot-detail.png)
 
-The team map draws who hands work to whom. The same connections are listed underneath, with their labels.
+The team map draws who hands work to whom, with each bot's name under its node. The same connections are listed underneath, with their labels.
 
 ![Team map of the example fleet and the connection list](docs/screenshots/team-map.png)
 
-Light and dark follow the phone, and you can pin one in Settings.
+Dark is the theme the first time you open the app. Light and System stay in Settings, and a theme you already picked is left alone.
 
 ![Home screen in dark mode](docs/screenshots/dark-mode.png)
 
@@ -45,11 +45,11 @@ Light and dark follow the phone, and you can pin one in Settings.
 
 - **Bot cards.** Name, short role, emoji, color, status (Active, Paused, Idea, Retired), tags, notes, and an optional http(s) link.
 - **Roster.** Search, filter by status, and filter by tag. Open a bot, edit it, or delete it. Delete asks first and removes that bot's to-dos, activity, and connections.
-- **Team map.** Directed hand-offs with an optional label such as "milestone updates" or "FYI". The diagram is a simple grid that stays readable on a phone. Tap a node to open the bot. The list under the diagram is the accessible version of the same links.
+- **Team map.** Directed hand-offs with an optional label such as "milestone updates" or "FYI". The diagram is a simple grid that stays readable on a phone, with the bot's name under each node. Tap a node to open the bot. The list under the diagram is the accessible version of the same links.
 - **Activity and to-dos.** Each bot has a timestamped log and a checklist. Home shows open to-dos across the fleet and the latest activity.
 - **Example fleet.** Six fictional assistants (Job Scout, Code Partner, Study Coach, and others) so the screens have something to show on a first run. They are samples, not real people or real accounts.
 - **Backup.** Export the whole fleet as JSON, or paste a backup back in. A malformed file is rejected and the data on the device is left as it is.
-- **Themes.** System, light, or dark.
+- **Themes.** Dark on a first run. Light and System are still in Settings. A theme already saved on the device is not replaced.
 - **Offline.** The installed web app loads from a service worker after the first visit.
 
 ## Tech stack

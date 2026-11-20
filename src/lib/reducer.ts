@@ -13,7 +13,7 @@ export interface FleetState {
 export const initialState: FleetState = {
   bots: [],
   links: [],
-  settings: { theme: 'system' },
+  settings: { theme: 'dark' },
 };
 
 export type Action =
